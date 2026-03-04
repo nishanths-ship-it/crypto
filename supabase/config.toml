@@ -1,0 +1,4 @@
+project_id = "crypto-volatility"
+
+[functions.crypto-metrics]
+verify_jwt = true
