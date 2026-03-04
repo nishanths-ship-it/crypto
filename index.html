@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Volatility & Risk Analysis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Crypto Volatility & Risk Analysis</h1>
+        <p>Track rolling volatility and portfolio risk for top cryptocurrencies.</p>
+      </header>
+
+      <section class="auth card">
+        <div class="auth-row">
+          <input id="email" type="email" placeholder="Email" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="sign-up">Sign Up</button>
+          <button id="sign-in">Sign In</button>
+          <button id="sign-out" class="secondary">Sign Out</button>
+        </div>
+        <p id="auth-status">Not signed in</p>
+      </section>
+
+      <section class="controls card">
+        <label for="asset">Select cryptocurrency</label>
+        <select id="asset">
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="solana">Solana (SOL)</option>
+        </select>
+        <button id="load-data">Load Metrics</button>
+      </section>
+
+      <section class="metrics-grid">
+        <article class="metric card">
+          <h2>30-Day Volatility</h2>
+          <p id="volatility">-</p>
+        </article>
+        <article class="metric card">
+          <h2>Value at Risk (95%)</h2>
+          <p id="var">-</p>
+        </article>
+        <article class="metric card">
+          <h2>Sharpe Ratio</h2>
+          <p id="sharpe">-</p>
+        </article>
+        <article class="metric card">
+          <h2>Maximum Drawdown</h2>
+          <p id="max-drawdown">-</p>
+        </article>
+      </section>
+
+      <section class="card chart-wrapper">
+        <canvas id="volatility-chart"></canvas>
+      </section>
+
+      <p id="message" class="message"></p>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
